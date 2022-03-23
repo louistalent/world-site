@@ -1,0 +1,232 @@
+.homeBG {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: linear-gradient(160deg, #1d1524, #0a070c, #0a070c);
+}
+
+.signBG {
+    background-image: linear-gradient(325deg, #15101a, #150f1a, #140e18);
+}
+
+.phoneClass {
+    width: 100% !important;
+    color: white !important;
+    background: transparent !important;
+    padding: 27px 50px !important;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.phoneClass2 {
+    width: 100% !important;
+    color: white !important;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+    padding: 27px 50px !important;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.phoneButtonClass2 {
+    border-radius: 6px 0px 0px 6px !important;
+}
+
+/* .phoneButtonClass{
+  background-color: transparent!important;
+  width: 48px!important;
+  border-right: none!important;
+} */
+/* .phoneButtonClass div:hover{
+  background-color: transparent!important;
+} */
+/* .phoneButtonClass .arrow{
+      position: relative !important;
+    top: 50% !important;
+    margin-top: -2px !important;
+    left: 20px !important;
+    width: 2px !important;
+    height: 5px !important;
+    border-left: 5px solid transparent !important;
+    border-right: 5px solid transparent !important;
+    border-top: 9px solid #555 !important;
+} */
+/* .phoneButtonClass:hover .arrow{
+    border-top: 9px solid yellow !important;
+} */
+
+/* .dropdownClass{
+  background-color: transparent!important;
+  color: white;
+} */
+/* .dropdownClass:hover{
+  background-color: transparent!important;
+}
+.dropdownClass li:hover{
+  color: black;
+  background-color: rgb(151, 89, 89);
+} */
+
+.searchClass {
+    background-color: transparent;
+}
+
+.Hover:hover {
+    cursor: pointer;
+    color: yellow;
+}
+
+.padding-start-none {
+    -webkit-padding-start: 0px !important;
+}
+
+.avatar-editor {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* Button */
+
+.field {
+    --uiFieldBorderWidth: var(--fieldBorderWidth, 1px);
+    --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+    --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+    --uiFieldBorderColorActive: var(--fieldBorderColorActive, rgba(22, 22, 22, 1));
+
+    display: var(--fieldDisplay, inline-flex);
+    position: relative;
+    font-size: var(--fieldFontSize, 1rem);
+}
+
+.field__input {
+    background-color: transparent !important;
+    color: white;
+    box-sizing: border-box;
+    font-size: 20px;
+    border-radius: 5px;
+    width: var(--fieldWidth, 100%);
+    height: var(--fieldHeight, 3.5rem);
+    padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, .5rem) var(--uiFieldPaddingLeft);
+    border: var(--uiFieldBorderWidth) solid grey;
+}
+
+.field__input:focus {
+    outline: none;
+}
+
+.field__input::-webkit-input-placeholder {
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+.field__input::-moz-placeholder {
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+.field__input:focus::-webkit-input-placeholder {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+.field__input:focus::-moz-placeholder {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+
+.field__input:focus~.field__label-wrap::after {
+    opacity: 1;
+}
+
+.field__label {
+    color: white;
+    position: absolute;
+    left: var(--uiFieldPaddingLeft);
+    top: calc(50% - .5em);
+    line-height: 1;
+    font-size: var(--fieldHintFontSize, inherit);
+    transition: top .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out, font-size .2s ease-out;
+}
+
+.field__input:focus~.field__label-wrap .field__label,
+.field__input:not(:placeholder-shown)~.field__label-wrap .field__label {
+    --fieldHintFontSize: var(--fieldHintFontSizeFocused, .75rem);
+
+    top: var(--fieldHintTopHover, .25rem);
+}
+
+.field_v2 .field__label-wrap {
+    overflow: hidden;
+}
+
+
+.field_v3 .field__input:focus~.field__label-wrap::after {
+    height: 100%;
+}
+
+
+
+.field {
+    --fieldBorderColor: #D1C4E9;
+    /* --fieldBorderColorActive: #069e1b; */
+}
+
+/* toggle btn */
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+}
+
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-switch .switch {
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 25px;
+    border: 1px #fcfffc solid;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.2s ease;
+}
+
+.toggle-switch .switch::before {
+    position: absolute;
+    content: "";
+    left: 2px;
+    top: 2px;
+    width: 19px;
+    height: 19px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch input[type="checkbox"]:checked+.switch::before {
+    transform: translateX(15px);
+    background-color: #A0FFA0;
+}
+
+.toggle-switch input[type="checkbox"]:checked+.switch {
+    background-color: transparent;
+    border: 1px #A0FFA0 solid;
+}

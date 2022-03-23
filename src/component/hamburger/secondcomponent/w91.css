@@ -1,0 +1,25 @@
+.w91-phone-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.w91-phone-input1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media(max-width:567px) {
+    .w91-phone-input1 {
+        flex-direction: column;
+    }
+
+    .dis-n-mobile {
+        display: none;
+    }
+}
+
+@media(max-width:600px) {}

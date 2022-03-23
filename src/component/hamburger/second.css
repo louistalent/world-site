@@ -1,0 +1,7 @@
+.up-card-ham {
+    background: rgba(10, 7, 12, 0.25);
+    border-radius: 14px;
+    width: 100px;
+    height: 130px;
+    display: flex;
+}
