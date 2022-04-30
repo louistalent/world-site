@@ -194,7 +194,7 @@ function Signup() {
 
     return (
         <>
-            <Center>
+            <Center mt='70px'>
                 <VStack className="signBG" borderRadius={20} p={1} pb='70px!important' w='600px' height='600px'>
                     <Center>
                         <Image w='40px' src={mark}></Image>

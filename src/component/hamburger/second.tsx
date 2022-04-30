@@ -41,6 +41,14 @@ const SecondHam = () => {
 
         }
     }
+    // 
+    const [isMobile] = useMediaQuery('(max-width: 567px)');
+    const [monitorMobile, setMonitorMobile] = useState('');
+    useEffect(() => {
+        if (window.innerWidth < 567) {
+            setMonitorMobile(window.innerWidth + 'px');
+        }
+    }, [window.innerWidth])
     return (
         <>
             < Box className="" pt={'40px'} >
@@ -55,7 +63,8 @@ const SecondHam = () => {
             </Box >
             <Box p='20px'></Box>
             <Box height={'150px'}>
-                < Box className="earn-bg" textAlign={'left'}  >
+                < Box className="earn-bg" w={isMobile ? monitorMobile : '360px'} textAlign={'left'}  >
+
                     <Box className="r" m='0px' padding={'30px 40px'}>
                         <Box className="c-s-24" pr='0' pl='0'>
                             <Text fontSize={'17px'}>

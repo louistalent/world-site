@@ -4,6 +4,8 @@ import { useMediaQuery, Box, Text, Flex, Container, PinInput, PinInputField, Sta
 import PhoneInput from 'react-phone-input-2'
 import { useState, useEffect } from 'react';
 import { useHref, useNavigate } from 'react-router-dom';
+import { UseStateContext } from "../contexts";
+
 // import { browserHistory } from 'react-router';
 
 interface phoneType {
@@ -19,6 +21,11 @@ interface sendType {
     [key: string]: string | number | boolean | String[]
 }
 function Signin(props: any) {
+    const [StateContext, { dispatch }] = UseStateContext();
+    // dispatch({ type: 'isTokenSearchBar', payload: true });
+    // StateContext.minSider
+
+
     const [isLessMobile] = useMediaQuery('(max-width: 430px)');
     const navigate = useNavigate();
     const [state, setState] = useState<phoneType>({
@@ -36,12 +43,14 @@ function Signin(props: any) {
     const setPass = (c: string) => { updateStatus({ pass: c }); }
 
     const logined = () => {
+        dispatch({ type: 'logined', payload: true });
         props.setLogined(true)
         navigate('/')
+
     }
     return (
         <>
-            <Center>
+            <Center mt='70px'>
                 <VStack className="signBG" borderRadius={20} p={1} pb='70px!important' w='600px' height='600px'>
                     <Center>
                         <Image w='40px' src={mark}></Image>

@@ -18,6 +18,9 @@ function Layout(props) {
         if (location.pathname === '/api' || location.pathname === '/w91' || location.pathname === '/w92' || location.pathname === '/disclaimer' || location.pathname === '/permission' || location.pathname === '/end') {
             setDis(true);
         }
+        if (location.pathname === '/signup' || location.pathname === '/signin') {
+            setDis(true);
+        }
     }, [location])
     return (
         <>

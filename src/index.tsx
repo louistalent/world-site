@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider, Box } from "@chakra-ui/react";
+import ContextProvider, { UseStateContext } from "./contexts";
+
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider>
-      <Box className='homeBG' />
-      <App />
+      <ContextProvider>
+
+        <Box className='homeBG' />
+        <App />
+      </ContextProvider>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
