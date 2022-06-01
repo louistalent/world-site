@@ -15,10 +15,13 @@ function Layout(props) {
             setDis(false);
             props.setIsHome(false);
         }
-        if (location.pathname === '/api' || location.pathname === '/w91' || location.pathname === '/w92' || location.pathname === '/disclaimer' || location.pathname === '/permission' || location.pathname === '/end') {
+        if (location.pathname === '/videochat' || location.pathname === '/api' || location.pathname === '/w91' || location.pathname === '/w92' || location.pathname === '/disclaimer' || location.pathname === '/permission' || location.pathname === '/end') {
             setDis(true);
         }
         if (location.pathname === '/signup' || location.pathname === '/signin') {
+            setDis(true);
+        }
+        if (location.pathname === '/earn-phoneverify' || location.pathname === '/earn-profile') {
             setDis(true);
         }
     }, [location])

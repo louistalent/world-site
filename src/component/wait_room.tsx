@@ -39,7 +39,7 @@ function WaitRoom() {
                 <Center>
                     <VStack w={isMobile ? '100%' : '80%'}>
                         <VStack className="wait_bg" position='relative' overflow='hidden' p={0} w={'100%'} borderRadius="20px">
-                            <HStack w='100%' p="10px" className="r" background='#241f28' position='relative'>
+                            <HStack w='100%' p="17px 10px 10px 10px" className="r" background='#241f28' position='relative'>
                                 <Box display={isMobile ? 'none' : ''} backgroundImage={userBg} backgroundSize='cover' width='100%' bgRepeat='no-repeat' position='absolute' left={0} right={0} top={0} bottom={0}></Box>
 
                                 {/* <Box className="r"> */}
@@ -75,7 +75,7 @@ function WaitRoom() {
                                                 :
                                                 <Text fontSize='22px'>Is calling you now</Text>
                                         }
-                                        {isCom && request && <Button w='180px' _hover={{ boxShadow: ' 0 0 10px 0 #50ba51 inset, 0 0 10px 4px #50ba51 ' }} bottom={2} p={'24px'}>
+                                        {isCom && request && <Link to='/videochat'><Button w='180px' _hover={{ boxShadow: ' 0 0 10px 0 #50ba51 inset, 0 0 10px 4px #50ba51 ' }} bottom={2} p={'24px'}>
                                             <HStack>
                                                 <HStack>
                                                     <Image h='28px' src={logopart1}></Image>
@@ -84,14 +84,14 @@ function WaitRoom() {
                                                 {/* <Image w='45px' src={blackLogo}></Image> */}
                                                 <Heading className="site-font video_effect" fontSize={isMobile ? '15px' : '22px'} color='gray.700'>Pick up</Heading>
                                             </HStack>
-                                        </Button>}
+                                        </Button></Link>}
                                     </VStack>
                                 </HStack>
                                 <Box h='170px' display={isCom ? 'none' : ''} className="c-m-6 c-l-6">
                                     {request &&
                                         <VStack h='100%' alignItems='flex-start' justifyContent='space-between'>
                                             <Box></Box>
-                                            <Button w='180px' _hover={{ boxShadow: ' 0 0 10px 0 #50ba51 inset, 0 0 10px 4px #50ba51 ' }} bottom={2} p={'24px'}>
+                                            <Link to='/videochat'><Button w='180px' _hover={{ boxShadow: ' 0 0 10px 0 #50ba51 inset, 0 0 10px 4px #50ba51 ' }} bottom={2} p={'24px'}>
                                                 <HStack>
                                                     <HStack>
                                                         <Image h='28px' src={logopart1}></Image>
@@ -100,7 +100,7 @@ function WaitRoom() {
                                                     {/* <Image w='45px' src={blackLogo}></Image> */}
                                                     <Heading className="site-font video_effect" fontSize={isMobile ? '15px' : '22px'} color='gray.700'>Pick up</Heading>
                                                 </HStack>
-                                            </Button>
+                                            </Button></Link>
                                         </VStack>
                                     }
                                 </Box>

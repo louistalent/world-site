@@ -51,7 +51,7 @@ const SecondHam = () => {
     }, [window.innerWidth])
     return (
         <>
-            < Box className="" pt={'40px'} >
+            < Box className="" pt={'10px'} >
                 <Box className="r">
                     <Box className="c-s-24" >
                         <Box className="" alignItems='center'>
@@ -63,8 +63,7 @@ const SecondHam = () => {
             </Box >
             <Box p='20px'></Box>
             <Box height={'150px'}>
-                < Box className="earn-bg" w={isMobile ? monitorMobile : '360px'} textAlign={'left'}  >
-
+                < Box className="earn-bg-second" ml='-40px' w={isMobile ? monitorMobile : '360px'} textAlign={'left'}  >
                     <Box className="r" m='0px' padding={'30px 40px'}>
                         <Box className="c-s-24" pr='0' pl='0'>
                             <Text fontSize={'17px'}>

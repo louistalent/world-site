@@ -1,3 +1,25 @@
+.IncomingCall-modal-bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #0A070C;
+    opacity: 0.9;
+    z-index: 9999;
+}
+.IncomingCall-modal-body {
+    position: relative;
+}
+.IncomingCall{
+    position: absolute;
+    top: 5px;
+    left: 0%;
+    right: 0%;
+    z-index: 9999;
+    margin: auto;
+    display: flex;
+}
 .filter-modal-bg {
     position: fixed;
     left: 0;
@@ -5,7 +27,7 @@
     top: 0;
     bottom: 0;
     background: linear-gradient(151.05deg, rgba(32, 23, 39, 0.9) -1.98%, rgba(10, 7, 12, 0.9) 42.25%);
-    z-index: 999999999;
+    z-index: 9999;
 }
 
 .filter-modal-body {
@@ -18,7 +40,7 @@
     top: 200px;
     left: 2%;
     right: 10%;
-    z-index: 9999999999;
+    z-index: 99999;
     border: 0.5px solid rgba(255, 255, 255, 0.25);
     box-sizing: border-box;
     border-radius: 10px;
@@ -66,14 +88,23 @@
 .home-img {
     overflow: hidden;
     position: relative;
-    height: 300px;
+    height: 220px;
     margin-top: 10px !important;
-    width: 230px;
+    width: 180px;
     background-size: 100% 100%;
     border-radius: 15px;
     padding: 6px 10px;
 }
-
+.status-display1 {
+    position: absolute;
+    right: 0;
+    bottom: 38px;
+    background: rgba(10, 7, 13, 0.75);
+    backdrop-filter: blur(20px);
+    border-radius: 16px 0px 0px 0px;
+    padding: 3px 6px;
+    text-align: center;
+}
 .status-display {
     position: absolute;
     right: 0;
@@ -84,14 +115,37 @@
     padding: 3px 10px;
     text-align: center;
 }
-
+.tabindex-box-none{
+    box-shadow: none;
+    border: none;
+}
+.tabindex-box-none:active,.tabindex-box-none:hover,.tabindex-box-none:target{
+    box-shadow: none;
+    border: none;
+}
+.tabindex-box-none:focus{
+    box-shadow: none;
+    border: none;
+}
 .main-home .img-display a {
     margin: 10px;
 }
+.gem-number{
+    font-size: 22px;
+    color: white;
+}
+.gem-unit{
+    font-size: 15px;
+    padding-top: 5px;
+    color: white;
+}
 
+.main-home .img-display-v a {
+    /* margin: 10px; */
+}
 .img-scroll {
     display: flex;
-    margin-top: 30px;
+    margin-top: 10px;
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
@@ -115,6 +169,62 @@
     height: 3px;
 }
 
+.img-scroll-ham {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    padding-bottom: 6px;
+}
+
+.img-scroll-ham::-webkit-scrollbar {
+    height: 5px;
+}
+
+.img-scroll-ham::-webkit-scrollbar-track {
+    background-color: #2e2b30;
+    width: 3px;
+    border-radius: 100px;
+}
+
+.img-scroll-ham::-webkit-scrollbar-thumb {
+    background-color: rgb(148, 144, 144);
+    border-radius: 100px;
+    width: 3px;
+    height: 3px;
+}
+
+
+.img-scroll-v {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    /* justify-content: flex-start; */
+    justify-content: space-between!important;
+}
+
+.img-scroll-v::-webkit-scrollbar {
+    height: 5px;
+}
+
+.img-scroll-v::-webkit-scrollbar-track {
+    background-color: #2e2b30;
+    width: 3px;
+    border-radius: 100px;
+}
+
+.img-scroll-v::-webkit-scrollbar-thumb {
+    background-color: rgb(148, 144, 144);
+    border-radius: 100px;
+    width: 3px;
+    height: 3px;
+}
 @media(max-width:850px) {
     .filter {
         overflow: auto;
@@ -154,4 +264,39 @@
         width: 100%;
         height: 400px;
     } */
+    .home-img {
+        overflow: hidden;
+        position: relative;
+        height: 220px;
+        margin-top: 10px !important;
+        width: 180px;
+        background-size: 100% 100%;
+        border-radius: 15px;
+        padding: 6px 10px;
+    }
+}
+
+@media(max-width:420px) {
+        .home-img {
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+            margin-top: 10px !important;
+            width: 160px;
+            background-size: 100% 100%;
+            border-radius: 15px;
+            padding: 6px 10px;
+        }
+}
+@media(max-width:370px) {
+    .home-img {
+        overflow: hidden;
+        position: relative;
+        height: 165px;
+        margin-top: 10px !important;
+        width: 140px;
+        background-size: 100% 100%;
+        border-radius: 15px;
+        padding: 6px 10px;
+    }
 }

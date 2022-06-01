@@ -17,6 +17,11 @@ code {
   align-items: center;
   justify-content: center;
 }
+.justify-ju-r{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
 
 .homeBG {
   position: fixed;
@@ -88,6 +93,10 @@ code {
 .site-font {
   font-family: 'Proxima_Nova_normal' !important;
 }
+.Proxima_Nova_normal{
+  font-family: 'Proxima_Nova_normal';
+}
+
 
 body {
   margin: 0;
@@ -130,6 +139,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.nowarp{
+  flex-wrap: nowrap;
 }
 
 .dis-n {

@@ -1,0 +1,51 @@
+.video-chat-bg{
+    background: url('../assets/video-chat.png');
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+}
+.video-controller{
+    background: rgba(10, 7, 12, 0.8);
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    color: white;
+}
+.video-right-side-image{
+    background: url('../assets/call.png');
+    background-size: cover;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 20px;
+    width: 20rem;
+    height: 10rem;
+}
+.video-right-side-image:hover{
+    cursor: pointer;
+}
+@media (max-width:576px) {
+    .video-controller{
+        position: fixed;
+        left: 15px;
+        top: 15px;
+        right: 15px;
+    }
+    .video-right-side-image{
+        width: auto;
+        left: 50%;
+        background-position: center;
+        background-size:200% 100%;
+        background-origin: content-box;
+        right: 15px;
+        bottom: 15px;
+        height: 15rem;
+    }
+}

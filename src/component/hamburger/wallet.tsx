@@ -34,8 +34,8 @@ const WalletHam = () => {
         <>
             <>
                 {/* image section */}
-                < Box className="" pt={'40px'} >
-                    <Box className="r">
+                < Box className="" pt={'10px'} >
+                    {/* <Box className="r">
                         <Box className="c-s-24" >
                             <Box className="" display={'flex'} alignItems='center'>
                                 <Text fontFamily={'Proxima_Nova_600'} fontSize={'20px'}>Adam</Text>
@@ -50,7 +50,7 @@ const WalletHam = () => {
                                 <Text opacity={'50%'} fontSize={'13px'}>@adam220adam</Text>
                             </Box>
                         </Box>
-                    </Box>
+                    </Box> */}
                     <Box className="r" pt={'10px'}>
                         <Box className="c-s-24 justify-s">
 

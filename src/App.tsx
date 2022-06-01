@@ -8,6 +8,8 @@ import Signin from "./component/signin";
 import Home from "./component/home";
 import Celebrity from "./component/celebrity";
 import WaitRoom from "./component/wait_room";
+import VideoChat from "./component/video-chat";
+
 // childen router for hamburger
 import API from "./component/hamburger/secondcomponent/api";
 import W91 from "./component/hamburger/secondcomponent/w91";
@@ -15,6 +17,9 @@ import W92 from "./component/hamburger/secondcomponent/w92";
 import Disclaimer from "./component/hamburger/secondcomponent/disclaimer";
 import Permission from "./component/hamburger/secondcomponent/permission";
 import End from "./component/hamburger/secondcomponent/end";
+
+import Phoneverify from "./component/hamburger/second2component/phoneverify";
+import Profile from "./component/hamburger/second2component/profile";
 
 
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -31,6 +36,7 @@ function App() {
           <Route path="/celebrity" element={<Celebrity logined={logined} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin setLogined={setLogined} />} />
+          <Route path="/videochat" element={<VideoChat />} />
 
           <Route path="/api" element={<API />} />
           <Route path="/w91" element={<W91 />} />
@@ -38,6 +44,9 @@ function App() {
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/permission" element={<Permission />} />
           <Route path="/end" element={<End />} />
+
+          <Route path="/earn-phoneverify" element={<Phoneverify />} />
+          <Route path="/earn-profile" element={<Profile />} />
 
           <Route path="*" element={<Home logined={logined} />} />
         </Routes>

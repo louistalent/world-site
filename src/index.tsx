@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider, Box } from "@chakra-ui/react";
 import ContextProvider, { UseStateContext } from "./contexts";
+import './responsive.css';
 
 ReactDOM.render(
   <React.StrictMode>

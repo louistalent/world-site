@@ -23,7 +23,7 @@
 }
 
 .hamControl {
-    border: 1px gray solid;
+    border: 1px rgba(255, 255, 255, 0.35) solid;
     border-radius: 10px;
     background: transparent;
     padding: 13px 13px 13px 13px;
@@ -85,8 +85,8 @@
     border-radius: 10px;
     /* background: rgba(196, 196, 196, 0.05); */
     background: transparent;
-    height: 240px;
-    max-height: 240px;
+    height: 310px;
+    max-height: 310px;
     width: 100%;
 }
 
@@ -131,7 +131,12 @@
 }
 
 .earn-bg {
-    margin-left: -40px;
+    background: #201727;
+    border-radius: 10px;
+    border: 1px #af26ff64 dashed;
+    /* background: radial-gradient(4px 8px, #52cc7a 80%,transparent 87%) 0 0/20px 100%; */
+}
+.earn-bg-second{
     background: #201727;
 }
 

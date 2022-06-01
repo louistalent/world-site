@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import logo from "../assets/logo.png";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 import { FaShieldAlt, FaGem } from "react-icons/fa";
 import { SearchIcon, ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 
 import { useMediaQuery, Text, Center, Input, Box, Container, Image, HStack, VStack, Button } from "@chakra-ui/react";
+import { Search2Icon } from "@chakra-ui/icons";
 
 import EarnHam from "./hamburger/earn";
 import WalletHam from "./hamburger/wallet";
+import ProfileHam from "./hamburger/profile";
 import SecondHam from "./hamburger/second";
 import BodyHam from "./hamburger/body";
 import logopart1White from "../assets/logo-part1-white.svg";
@@ -26,7 +29,8 @@ const SearchBox = ({ setIsSearch }: SearchProps) => {
                 <Center>
                     <Box w='80%' className="justify-s">
                         <Box className="justify" borderBottom='2px #3f3943 solid'>
-                            <SearchIcon w='20px' color='gray.300'></SearchIcon>
+                            {/* <SearchIcon w='20px' color='gray.300'></SearchIcon> */}
+                            <Search2Icon w='20px' color='gray.500' />
                             <Input fontFamily={'Proxima_Nova_400'} className="site-font" color='white' w='200px' ml='5px' placeholder="search" variant='unstyled'></Input>
                         </Box>
                         <BsXLg onClick={() => setIsSearch(false)} className="white" fontSize={'22px'} />
@@ -44,6 +48,7 @@ interface HamProps {
 const Hamburger = ({ cancel_hamburger, online, setOnline }: HamProps) => {
     const [isWallet, setIsWallet] = useState(false);
     const [isEarn, setIsEarn] = useState(false);
+    const [isProfile,setIsProfile] = useState(false);
     const [isSecond, setIsSecond] = useState(false);
     const [isBackbtn, setIsBackbtn] = useState(false);
 
@@ -56,10 +61,16 @@ const Hamburger = ({ cancel_hamburger, online, setOnline }: HamProps) => {
             setIsEarn(false)
             setIsSecond(true);
         }
+        else if (para === 'editProfile') {
+            setIsEarn(false)
+            setIsSecond(false);
+            setIsProfile(true);
+        }
         setIsBackbtn(true)
     }
     const goBody = () => {
         setIsEarn(false)
+        setIsProfile(false);
         setIsWallet(false)
         setIsBackbtn(false)
         setIsSecond(false);
@@ -69,7 +80,7 @@ const Hamburger = ({ cancel_hamburger, online, setOnline }: HamProps) => {
 
             <Box onClick={() => cancel_hamburger(false)} position={'fixed'} zIndex={'998'} background={'transparent'} right={0} left={0} top={0} bottom={0}></Box>
 
-            <Box color={'white'} className="hamburger-list" p={'40px 40px 20px 40px'}>
+            <Box color={'white'} className="hamburger-list" p={'30px 40px 20px 40px'}>
                 {/* status */}
                 <Box className="" mt='9px'>
                     <Box className="r">
@@ -77,13 +88,16 @@ const Hamburger = ({ cancel_hamburger, online, setOnline }: HamProps) => {
                             {
                                 isBackbtn ?
                                     <Box>
-                                        <ChevronLeftIcon style={{ marginLeft: '-10px' }} onClick={goBody} cursor={'pointer'} className="" w='30px' h='30px' />
+                                        <ChevronLeftIcon style={{ marginLeft: '-10px'}} onClick={goBody} cursor={'pointer'} fontSize='50px' />
                                     </Box>
                                     :
-                                    <Box className="justify-s">
-                                        <Text onClick={() => setOnline(true)} border={`${online ? '1px white solid' : ''}`} zIndex={online ? '1001' : ''} color={online ? '#a0ffa0' : ''} mr='-3px' fontSize={'12px'} className="out-btn ham-option">Online</Text>
-                                        <Text onClick={() => setOnline(false)} border={online ? '' : '1px white solid'} zIndex={online ? '1000' : ''} color={online ? '' : '#a0ffa0'} ml='-3px' fontSize={'12px'} className="out-btn ham-option">Offline</Text>
+                                    <Box>
+                                        <ChevronLeftIcon style={{ marginLeft: '-10px',opacity:0}} onClick={goBody} cursor={'pointer'} fontSize='50px' />
                                     </Box>
+                                    // <Box className="justify-s">
+                                    //     <Text onClick={() => setOnline(true)} border={`${online ? '1px white solid' : ''}`} zIndex={online ? '1001' : ''} color={online ? '#a0ffa0' : ''} mr='-3px' fontSize={'12px'} className="out-btn ham-option">Online</Text>
+                                    //     <Text onClick={() => setOnline(false)} border={online ? '' : '1px white solid'} zIndex={online ? '1000' : ''} color={online ? '' : '#a0ffa0'} ml='-3px' fontSize={'12px'} className="out-btn ham-option">Offline</Text>
+                                    // </Box>
                             }
                             <Box>
                                 <BsXLg onClick={() => cancel_hamburger(false)} className="white" cursor='pointer' fontSize={'30px'} />
@@ -92,7 +106,7 @@ const Hamburger = ({ cancel_hamburger, online, setOnline }: HamProps) => {
                     </Box>
                 </Box>
                 <Box className="">
-                    {!isWallet && !isEarn && !isSecond ?
+                    {!isWallet && !isEarn && !isSecond && !isProfile ?
                         <BodyHam btnEvent={btnEvent} />
                         : <>
                             {isWallet &&
@@ -103,6 +117,9 @@ const Hamburger = ({ cancel_hamburger, online, setOnline }: HamProps) => {
                             }
                             {isSecond &&
                                 <SecondHam />
+                            }
+                            {isProfile &&
+                                <ProfileHam />
                             }
                         </>
 
@@ -130,15 +147,36 @@ function HeaderLogin(props: any) {
             }
             {props.props.logined === false ?
                 <HStack justify='space-between' pt={10} pb={'6px'}>
-                    <Link to='/'>
-                        <HStack>
-                            <Image h='40px' src={logopart1White}></Image>
-                            <Image h='30px' src={logopart2White} marginLeft='1px!important'></Image>
-                        </HStack>
-                    </Link>
+                    <Box className={'justify'}>
+                        <Link to='/'>
+                            <HStack>
+                                <Image h='40px' src={logopart1White}></Image>
+                                <Image h='30px' src={logopart2White} marginLeft='1px!important'></Image>
+                            </HStack>
+                        </Link>
+                        <Box className="justify" ml={isMobile ? '0px' : '20px'} display={isMobile ? 'none' : ''} borderBottom='2px #3f3943 solid'>
+                            {!props.isHome &&
+                                <>
+                                    {/* <SearchIcon w='13px' color='gray.300'></SearchIcon> */}
+                                    <Search2Icon color='gray.500' />
+                                    <Input color={'white'} fontFamily='Proxima_Nova_normal' className="site-font" w='100px' ml='5px' placeholder="search" variant='unstyled'></Input>
+                                </>
+                            }
+                        </Box>
+                        {isMobile &&
+                            <>
+                                {
+                                    !props.isHome &&
+                                    <Search2Icon ml={'15px'} _hover={{ color: '#A0FFA0' }} cursor={'pointer'} onClick={() => setIsSearch(true)} w='22px' fontSize={'20px'} color='gray.500' />
+                                    // <SearchIcon ml={'15px'} _hover={{ color: '#A0FFA0' }} cursor={'pointer'} onClick={() => setIsSearch(true)} w='22px' fontSize={'20px'} color='gray.300'></SearchIcon>
+
+                                }
+                            </>
+                        }
+                    </Box>
                     <Box>
                         <Link to='/signin'>
-                            <Button style={{ width: "100px", background: '#201727', color: 'white', marginRight: '15px' }} size='md'>
+                            <Button style={{ width: "100px", background: '#201727', color: 'white', marginRight: '25px' }} size='md'>
                                 Login
                             </Button>
                         </Link>
@@ -161,7 +199,8 @@ function HeaderLogin(props: any) {
                         <Box className="justify" ml={isMobile ? '0px' : '20px'} display={isMobile ? 'none' : ''} borderBottom='2px #3f3943 solid'>
                             {!props.isHome &&
                                 <>
-                                    <SearchIcon w='13px' color='gray.300'></SearchIcon>
+                                    <Search2Icon color='gray.500' />
+                                    {/* <SearchIcon w='13px' color='gray.300'></SearchIcon> */}
                                     <Input fontFamily='Proxima_Nova_normal' className="site-font" w='100px' ml='5px' placeholder="search" variant='unstyled'></Input>
                                 </>
                             }
@@ -170,7 +209,9 @@ function HeaderLogin(props: any) {
                             <>
                                 {
                                     !props.isHome &&
-                                    <SearchIcon ml={'15px'} _hover={{ color: '#A0FFA0' }} cursor={'pointer'} onClick={() => setIsSearch(true)} w='22px' fontSize={'20px'} color='gray.300'></SearchIcon>
+                                    <Search2Icon ml={'15px'} _hover={{ color: '#A0FFA0' }} cursor={'pointer'} onClick={() => setIsSearch(true)} w='22px' fontSize={'20px'} color='gray.500' />
+
+                                    // <SearchIcon ml={'15px'} _hover={{ color: '#A0FFA0' }} cursor={'pointer'} onClick={() => setIsSearch(true)} w='22px' fontSize={'20px'} color='gray.300'></SearchIcon>
                                 }
                             </>
                         }
